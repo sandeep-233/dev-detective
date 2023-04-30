@@ -2,7 +2,7 @@
 const searchbar = document.querySelector(".searchbar-container");
 const profilecontainer = document.querySelector(".profile-container");
 const root = document.documentElement.style;
-const get = (param) => document.getElementById(`${param}`);
+const get = (id_name) => document.getElementById(`${id_name}`);
 const url = "https://api.github.com/users/";
 const noresults = get("no-results");
 const btnmode = get("btn-mode");
@@ -73,10 +73,10 @@ function getUserData(gitUrl) {
 function updateProfile(data) {
   if (data.message !== "Not Found") {
     noresults.style.display = "none";
-    function checkNull(param1, param2) {
-      if (param1 === "" || param1 === null) {
-        param2.style.opacity = 0.5;
-        param2.previousElementSibling.style.opacity = 0.5;
+    function checkNull(data1, data2) {
+      if (data1 === "" || data1 === null) {
+        data2.style.opacity = 0.5;
+        data2.previousElementSibling.style.opacity = 0.5;
         return false;
       } else {
         return true;
